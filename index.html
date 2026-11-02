@@ -41,18 +41,17 @@ a{color:#0369A1}a:hover{color:#075985}
 .s-2x1{grid-column:span 2}
 @media (max-width:960px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.bento{grid-template-columns:minmax(0,1fr)}.s-2x2,.s-2x1{grid-column:auto;grid-row:auto}}
-.st{animation:v2In .42s cubic-bezier(.34,1.4,.64,1) both}
 @keyframes v2In{from{opacity:0;transform:translateY(16px) scale(.94)}to{opacity:1;transform:none}}
-@supports (animation-timeline: view()){.st{animation-timeline:view();animation-range:entry 0% entry 45%;animation-duration:auto}}
 .v2-float{animation:v2Float 4s ease-in-out infinite}
 @keyframes v2Float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 </style>
+<link rel="stylesheet" href="assets/css/motion.css">
 
 </head>
 <body>
 <div class="v2" style="--acc: #0369A1; background: #F8FAFC; color: #020617; font-family: 'Rubik', system-ui, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh; overflow-x: clip">
 <a class="v2-skip" href="#contenu">Aller au contenu</a>
+<div class="progress" aria-hidden="true"></div>
 
 <!-- NAV -->
 <header style="position: sticky; top: 0; z-index: 50; background: rgba(248,250,252,0.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid #E2E8F0">
@@ -76,27 +75,30 @@ a{color:#0369A1}a:hover{color:#075985}
 <main id="contenu">
 
 <!-- HERO : mission + crédibilité -->
-<section style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 64px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<section class="hero" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 64px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div class="hero-bg" aria-hidden="true"><div class="blob b1 mouse" style="--k: -30"></div><div class="blob b2 mouse" style="--k: 22"></div><div class="hero-dots"></div></div>
 <div style="flex: 999 1 540px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #E0F2FE; color: #075985; font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 999px">
+<span class="in" style="--d: 0; align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: #E0F2FE; color: #075985; font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: 999px">
 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
 Agence digitale dédiée aux garages automobiles</span>
-<h1 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(42px, 5.6vw, 68px); line-height: 1.04; letter-spacing: -1.5px; color: #0F172A">Trouvé sur Google.<br>Choisi par vos clients.<br><span style="color: #0369A1">Le reste est automatisé.</span></h1>
-<p style="margin: 0; max-width: 580px; font-size: 19px; color: #475569">Fiche Google optimisée, site rapide, avis clients et référencement local : nous rendons votre garage visible là où vos clients cherchent, puis nous automatisons les rappels, les relances et la prise de rendez-vous.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a class="v2-btn" href="#audit" style="text-decoration: none; background: #0369A1; color: #FFFFFF; font-weight: 600; font-size: 17px; padding: 15px 24px; border-radius: 12px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px">Recevoir mon audit gratuit
+<h1 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(42px, 5.6vw, 68px); line-height: 1.04; letter-spacing: -1.5px; color: #0F172A"><span class="line"><span>Trouvé sur Google.</span></span><span class="line"><span>Choisi par vos clients.</span></span><span class="line"><span style="color: #0369A1">Le reste est automatisé.</span></span></h1>
+<p class="in" style="--d: 2; margin: 0; max-width: 580px; font-size: 19px; color: #475569">Fiche Google optimisée, site rapide, avis clients et référencement local : nous rendons votre garage visible là où vos clients cherchent, puis nous automatisons les rappels, les relances et la prise de rendez-vous.</p>
+<div class="in" style="--d: 3; display: flex; flex-wrap: wrap; gap: 12px">
+<a class="v2-btn pulse" href="#audit" style="text-decoration: none; background: #0369A1; color: #FFFFFF; font-weight: 600; font-size: 17px; padding: 15px 24px; border-radius: 12px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px">Recevoir mon audit gratuit
 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
 <a class="v2-ghost" href="#tarifs" style="text-decoration: none; background: #FFFFFF; border: 1px solid #CBD5E1; color: #0F172A; font-weight: 600; font-size: 17px; padding: 15px 24px; border-radius: 12px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; width: 171px; height: 65px">Voir les tarifs</a>
 </div>
-<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 15px; color: #334155">
+<ul class="in" style="--d: 4; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 15px; color: #334155">
 <li style="display: inline-flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Audit offert sous 48 h</li>
 <li style="display: inline-flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>En ligne en 10 jours ouvrés</li>
 <li style="display: inline-flex; align-items: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Tarifs affichés, sans surprise</li>
 </ul>
 </div>
-<div style="flex: 1 1 380px; min-width: 0; position: relative; max-width: 460px; margin: 0 auto">
-<img src="assets/yves-donatien.webp" fetchpriority="high" alt="Yves-Donatien, fondateur de YDK Agency" width="460" height="575" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; border: 1px solid #E2E8F0; box-shadow: 0 20px 50px rgba(15,23,42,.12)">
-<div class="v2-float" style="position: absolute; left: -20px; bottom: 28px; max-width: 280px; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 14px 16px; box-shadow: 0 12px 30px rgba(15,23,42,.12); display: flex; gap: 12px; align-items: center">
+<div class="pop" style="--d: 0; flex: 1 1 380px; min-width: 0; position: relative; max-width: 460px; margin: 0 auto">
+<div class="par-up"><div class="mouse" style="--k: 14">
+<div class="photo-frame" style="border: 1px solid #E2E8F0; box-shadow: 0 20px 50px rgba(15,23,42,.12)"><img src="assets/yves-donatien.webp" fetchpriority="high" alt="Yves-Donatien, fondateur de YDK Agency" width="460" height="575" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover"></div>
+</div></div>
+<div class="v2-float mouse" style="--k: -22; position: absolute; left: -20px; bottom: 28px; max-width: 280px; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 14px 16px; box-shadow: 0 12px 30px rgba(15,23,42,.12); display: flex; gap: 12px; align-items: center">
 <span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg></span>
 <span style="display: flex; flex-direction: column; font-size: 14px; line-height: 1.35"><strong style="font-weight: 600; color: #0F172A">Yves-Donatien, fondateur</strong><span style="color: #475569">Expert des parcours clients automobiles en ligne</span></span>
 </div>
@@ -106,15 +108,15 @@ Agence digitale dédiée aux garages automobiles</span>
 <!-- PREUVES -->
 <section aria-label="Pourquoi la visibilité locale compte" style="background: #FFFFFF; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0">
 <div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
-<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #0F172A">+ de 90 %</span>
+<div class="rv" style="--d: 0; flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #0F172A">+ de <span data-count="90">90</span> %</span>
 <span style="color: #475569; font-size: 16px">des automobilistes utilisent Internet pour choisir leur garage</span>
 </div>
-<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #0F172A">89 %</span>
+<div class="rv" style="--d: 1; flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #0F172A"><span data-count="89">89</span> %</span>
 <span style="color: #475569; font-size: 16px">lisent les avis avant de choisir un garage</span>
 </div>
-<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div class="rv" style="--d: 2; flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; color: #0369A1">1 interlocuteur</span>
 <span style="color: #475569; font-size: 16px">du premier audit au rapport mensuel</span>
 </div>
@@ -122,44 +124,47 @@ Agence digitale dédiée aux garages automobiles</span>
 </div>
 </section>
 
+<!-- BANDEAU -->
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Fiche Google</span><span>Avis clients</span><span>Site mobile</span><span>Prise de RDV en ligne</span><span>Relance des devis</span><span>Rappels entretien & CT</span><span>Référencement local</span><span>Rapport mensuel</span><span>Fiche Google</span><span>Avis clients</span><span>Site mobile</span><span>Prise de RDV en ligne</span><span>Relance des devis</span><span>Rappels entretien & CT</span><span>Référencement local</span><span>Rapport mensuel</span></div></div>
+
 <!-- SERVICES : BENTO -->
 <section id="services" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #0369A1">Nos services</span>
-<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Tout ce qui fait venir un client jusqu'à chez vous.</h2>
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Tout ce qui fait venir un client <span class="h-ul">jusqu'à chez vous.</span></h2>
 </div>
 <div class="bento">
 
-<article class="v2-card st s-2x2" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 6px rgba(15,23,42,.04)">
-<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+<article class="v2-card rv s-2x2" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 4px 6px rgba(15,23,42,.04)">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 26px; color: #0F172A">Google Business Profile</h3>
 <p style="margin: 0; color: #475569">Fiche complète, catégories, photos, publications chaque semaine. C'est elle qui fait sonner le téléphone.</p>
 <div aria-hidden="true" style="margin-top: auto; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 13px; color: #64748B">Recherche : « garage + votre ville »</span>
-<div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 2px solid #0369A1; border-radius: 12px; padding: 10px 12px">
+<div class="rank-me" style="position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; background: #FFFFFF; border: 2px solid #0369A1; border-radius: 12px; padding: 10px 12px; box-shadow: 0 8px 20px rgba(3,105,161,.12)">
 <span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 22px; color: #0369A1; width: 28px; text-align: center">1</span>
 <span style="flex: 1; display: flex; flex-direction: column; line-height: 1.3"><span style="font-weight: 600; font-size: 15px">Votre garage</span><span style="font-size: 13px; color: #475569">★★★★★ · Ouvert · RDV en ligne</span></span>
-<span style="font-size: 12px; font-weight: 600; color: #15803D; background: #DCFCE7; padding: 4px 8px; border-radius: 999px">↑ 3 places</span>
+<span class="rank-badge" style="font-size: 12px; font-weight: 600; color: #15803D; background: #DCFCE7; padding: 4px 8px; border-radius: 999px">↑ 3 places</span>
 </div>
-<div style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; color: #64748B"><span style="font-family: 'Outfit', sans-serif; font-weight: 600; width: 28px; text-align: center">2</span><span style="font-size: 14px">Concurrent A · fiche incomplète</span></div>
-<div style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; color: #64748B"><span style="font-family: 'Outfit', sans-serif; font-weight: 600; width: 28px; text-align: center">3</span><span style="font-size: 14px">Concurrent B · avis sans réponse</span></div>
+<div class="rank-other" style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; color: #64748B"><span style="font-family: 'Outfit', sans-serif; font-weight: 600; width: 28px; text-align: center">2</span><span style="font-size: 14px">Concurrent A · fiche incomplète</span></div>
+<div class="rank-other" style="display: flex; align-items: center; gap: 12px; padding: 8px 12px; color: #64748B"><span style="font-family: 'Outfit', sans-serif; font-weight: 600; width: 28px; text-align: center">3</span><span style="font-size: 14px">Concurrent B · avis sans réponse</span></div>
 </div>
 </article>
 
-<article class="v2-card st" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); animation-delay: .06s">
-<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 9h18"></path><path d="M8 21h8"></path></svg></span>
+<article class="v2-card rv" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); --d: 1">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 9h18"></path><path d="M8 21h8"></path></svg></span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 21px; color: #0F172A">Site web rapide</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Une page par prestation, pensée pour le mobile et l'appel en un geste.</p>
 </article>
 
-<article class="v2-card st" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); animation-delay: .12s">
-<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></span>
+<article class="v2-card rv" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); --d: 2">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 21px; color: #0F172A">Avis clients</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Demande d'avis après chaque passage, réponse à chaque avis reçu.</p>
 </article>
 
-<article class="v2-card st s-2x1" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); animation-delay: .18s">
-<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span>
+<article class="v2-card rv s-2x1" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); --d: 3">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 21px; color: #0F172A">Référencement local</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Pages « prestation + ville », annuaires, suivi des positions chaque mois.</p>
 <div aria-hidden="true" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto">
@@ -170,11 +175,11 @@ Agence digitale dédiée aux garages automobiles</span>
 </div>
 </article>
 
-<article class="v2-card st s-2x1" style="background: #0F172A; border: 1px solid #0F172A; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; color: #FFFFFF; animation-delay: .24s">
-<span style="width: 44px; height: 44px; border-radius: 12px; background: #1E293B; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg></span>
+<article class="v2-card rv s-2x1" style="background: #0F172A; border: 1px solid #0F172A; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; color: #FFFFFF; --d: 4">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #1E293B; display: inline-flex; align-items: center; justify-content: center"><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"></path></svg></span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 21px">Automatisation</h3>
 <p style="margin: 0; color: #CBD5E1; font-size: 16px">Relance des devis, rappels d'entretien et de contrôle technique, confirmation des rendez-vous par SMS.</p>
-<div aria-hidden="true" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; font-size: 13px">
+<div class="chain" aria-hidden="true" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; font-size: 13px">
 <span style="background: #1E293B; padding: 6px 10px; border-radius: 8px">Devis non signé</span>
 <span style="color: #7DD3FC">→</span>
 <span style="background: #1E293B; padding: 6px 10px; border-radius: 8px">SMS à J+2</span>
@@ -183,8 +188,8 @@ Agence digitale dédiée aux garages automobiles</span>
 </div>
 </article>
 
-<article class="v2-card st s-2x1" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); animation-delay: .30s">
-<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15v-4"></path><path d="M12 15V8"></path><path d="M16 15v-6"></path></svg></span>
+<article class="v2-card rv s-2x1" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 4px 6px rgba(15,23,42,.04); --d: 5">
+<span style="width: 44px; height: 44px; border-radius: 12px; background: #E0F2FE; display: inline-flex; align-items: center; justify-content: center"><svg class="icon" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15v-4"></path><path d="M12 15V8"></path><path d="M16 15v-6"></path></svg></span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 21px; color: #0F172A">Rapport mensuel</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Appels, itinéraires, leads, délais de réponse, avis : ce que votre investissement rapporte, en une page.</p>
 </article>
@@ -195,9 +200,9 @@ Agence digitale dédiée aux garages automobiles</span>
 <!-- POUR QUI -->
 <section style="background: #FFFFFF; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<h2 style="margin: 0; max-width: 760px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Pensé pour les garages qui veulent un atelier plein, sans y passer leurs soirées</h2>
+<h2 class="rv" style="margin: 0; max-width: 760px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Pensé pour les garages qui veulent un atelier plein, sans y passer leurs soirées</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch">
-<article id="garages" class="v2-card st" style="flex: 2 1 520px; min-width: 0; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<article id="garages" class="v2-card rv" style="flex: 2 1 520px; min-width: 0; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
 <span style="font-size: 14px; font-weight: 600; color: #0369A1">Garages indépendants · Agents de marque · Carrosseries · VO</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 26px; color: #0F172A">Être premier dans votre ville et remplir l'atelier</h3>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; color: #334155">
@@ -208,7 +213,7 @@ Agence digitale dédiée aux garages automobiles</span>
 <li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6L9 17l-5-5"></path></svg>Vous validez en 15 minutes, nous faisons le reste</li>
 </ul>
 </article>
-<aside id="concessions" class="v2-card st" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px dashed #CBD5E1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 12px; animation-delay: .08s">
+<aside id="concessions" class="v2-card rv" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px dashed #CBD5E1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 12px; --d: 1">
 <span style="font-size: 14px; font-weight: 600; color: #475569">Concessions · Groupes de distribution</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; color: #0F172A">Audit parcours lead</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Votre site est géré par la marque ou une agence ? Nous regardons ce qui se passe après : délai de réponse, relances, leads perdus. En complément de vos prestataires, sans les remplacer.</p>
@@ -221,26 +226,26 @@ Agence digitale dédiée aux garages automobiles</span>
 
 <!-- TARIFS TRANSPARENTS -->
 <section id="tarifs" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<div class="rv" style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #0369A1">Tarifs</span>
-<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Moins de 100 € par mois, sans mauvaise surprise</h2>
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A"><span class="h-ul">Moins de 100 € par mois</span>, sans mauvaise surprise</h2>
 <p style="margin: 0; color: #475569">Prix de départ hors taxes : une mise en place payée une fois, puis un abonnement mensuel. Le devis exact suit l'audit gratuit.</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
-<article class="v2-card st" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; animation-delay: 0s">
+<article class="v2-card rv" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; animation-delay: 0s">
 <div><h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; color: #0F172A">Google visible</h3><p style="margin: 4px 0 0; color: #475569; font-size: 15px">Pour démarrer : la fiche Google qui fait sonner le téléphone</p></div>
 <div><span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 36px; color: #0F172A">49 €</span><span style="color: #475569"> /mois</span><p style="margin: 2px 0 0; font-size: 14px; color: #475569">+ 390 € de mise en place, payés une fois</p></div>
 <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: #334155"><li>Fiche Google complète et optimisée</li><li>Publications chaque mois</li><li>Réponse à vos avis</li><li>Rapport mensuel d'une page</li></ul>
 <a class="v2-ghost" href="#audit" style="margin-top: auto; text-decoration: none; text-align: center; border: 1px solid #CBD5E1; color: #0F172A; font-weight: 600; padding: 12px; border-radius: 12px">Demander mon audit</a>
 </article>
-<article class="v2-card st" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 2px solid #0369A1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 12px 30px rgba(3,105,161,.12); animation-delay: .06s">
+<article class="v2-card rv" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 2px solid #0369A1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 12px 30px rgba(3,105,161,.12); --d: 1">
 <span style="align-self: flex-start; font-size: 12px; font-weight: 600; background: #0369A1; color: #FFFFFF; padding: 4px 10px; border-radius: 999px">Recommandé</span>
 <div><h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; color: #0F172A">Garage visible</h3><p style="margin: 4px 0 0; color: #475569; font-size: 15px">Fiche Google + site web rapide</p></div>
 <div><span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 36px; color: #0F172A">79 €</span><span style="color: #475569"> /mois</span><p style="margin: 2px 0 0; font-size: 14px; color: #475569">+ 890 € de mise en place, payés une fois</p></div>
 <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: #334155"><li>Tout « Google visible »</li><li>Site mobile, une page par prestation</li><li>Demande d'avis automatique par SMS</li><li>Suivi des positions dans votre ville</li></ul>
 <a class="v2-btn" href="#audit" style="margin-top: auto; text-decoration: none; text-align: center; background: #0369A1; color: #FFFFFF; font-weight: 600; padding: 12px; border-radius: 12px">Demander mon audit</a>
 </article>
-<article class="v2-card st" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; animation-delay: .12s">
+<article class="v2-card rv" style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 18px; --d: 2">
 <div><h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; color: #0F172A">Atelier automatisé</h3><p style="margin: 4px 0 0; color: #475569; font-size: 15px">Pour remplir le planning sans décrocher le téléphone</p></div>
 <div><span style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 36px; color: #0F172A">99 €</span><span style="color: #475569"> /mois</span><p style="margin: 2px 0 0; font-size: 14px; color: #475569">+ 1 490 € de mise en place, payés une fois</p></div>
 <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: #334155"><li>Tout « Garage visible »</li><li>Prise de RDV en ligne</li><li>Relance des devis non signés</li><li>Rappels entretien et contrôle technique</li></ul>
@@ -252,24 +257,27 @@ Agence digitale dédiée aux garages automobiles</span>
 <!-- METHODE -->
 <section id="methode" style="background: #FFFFFF; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px">
-<h2 style="margin: 0; max-width: 720px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">4 étapes, de l'audit aux résultats</h2>
+<div class="rv" style="display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; max-width: 720px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">4 étapes, <span class="h-ul">de l'audit aux résultats</span></h2>
+<div class="steps-track" aria-hidden="true"><i></i></div>
+</div>
 <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 16px">
-<li class="st" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0">
+<li class="rv" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0">
 <span style="width: 40px; height: 40px; border-radius: 50%; background: #0369A1; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-weight: 700; display: inline-flex; align-items: center; justify-content: center">1</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 20px">Audit gratuit · 48 h</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Vidéo sur votre fiche Google, votre site et 3 concurrents.</p>
 </li>
-<li class="st" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; animation-delay: .06s">
+<li class="rv" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; --d: 1">
 <span style="width: 40px; height: 40px; border-radius: 50%; background: #0F172A; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-weight: 700; display: inline-flex; align-items: center; justify-content: center">2</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 20px">Plan d'action · 30 min</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Échange sur place ou en visio, devis sous 24 h.</p>
 </li>
-<li class="st" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; animation-delay: .12s">
+<li class="rv" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; --d: 2">
 <span style="width: 40px; height: 40px; border-radius: 50%; background: #0F172A; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-weight: 700; display: inline-flex; align-items: center; justify-content: center">3</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 20px">Mise en ligne · 10 jours</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Site, fiche et automatisations en place, vous validez.</p>
 </li>
-<li class="st" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; animation-delay: .18s">
+<li class="rv" style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 24px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; --d: 3">
 <span style="width: 40px; height: 40px; border-radius: 50%; background: #0F172A; color: #FFFFFF; font-family: 'Outfit', sans-serif; font-weight: 700; display: inline-flex; align-items: center; justify-content: center">4</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 20px">Rapport · chaque mois</h3>
 <p style="margin: 0; color: #475569; font-size: 16px">Résultats mesurés, ajustements proposés.</p>
@@ -278,15 +286,17 @@ Agence digitale dédiée aux garages automobiles</span>
 </div>
 </section>
 
+<div class="drift-wrap" aria-hidden="true"><div class="drift">Garages · Google · Avis · Rendez-vous · Garages · Google ·</div></div>
+
 <!-- FONDATEUR -->
 <section id="fondateur" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
-<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div class="rv" style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #0369A1">Qui est derrière</span>
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Yves-Donatien, fondateur</h2>
 <p style="margin: 0; font-size: 18px; color: #334155">Product manager dans l'automobile, je conçois des parcours de vente en ligne et d'expérience client à l'échelle européenne. Mon métier : comprendre comment un automobiliste passe d'une recherche Google à un rendez-vous, et lever chaque frein en chemin.</p>
 <p style="margin: 0; font-size: 18px; color: #334155">Être visible, être clair, répondre vite : ce sont ces leviers qui font monter les demandes et les ventes. J'ai créé YDK Agency pour mettre ces méthodes au service des garages, avec des outils simples et des prix adaptés à un atelier.</p>
 </div>
-<aside class="v2-card" style="flex: 1 1 340px; min-width: 0; background: #0F172A; color: #FFFFFF; border: 1px solid #0F172A; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<aside class="v2-card rv" style="--d: 2; flex: 1 1 340px; min-width: 0; background: #0F172A; color: #FFFFFF; border: 1px solid #0F172A; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
 <span style="font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #7DD3FC">Programme pilote</span>
 <h3 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 28px">3 places, -50 % sur la mise en place</h3>
 <p style="margin: 0; color: #CBD5E1">En échange d'un témoignage et du partage de vos résultats.</p>
@@ -296,8 +306,8 @@ Agence digitale dédiée aux garages automobiles</span>
 
 <!-- FAQ -->
 <section style="background: #FFFFFF; border-top: 1px solid #E2E8F0">
-<div style="max-width: 860px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 24px">
-<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A">Questions fréquentes</h2>
+<div class="rv" style="max-width: 860px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(34px, 4vw, 48px); line-height: 1.1; letter-spacing: -1px; color: #0F172A"><span class="h-ul">Questions fréquentes</span></h2>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <details style="border: 1px solid #E2E8F0; border-radius: 16px; padding: 20px 24px; background: #F8FAFC">
 <summary style="font-weight: 600; font-size: 18px; color: #0F172A">J'ai déjà un site. Faut-il tout refaire ?</summary>
@@ -324,9 +334,10 @@ Agence digitale dédiée aux garages automobiles</span>
 </section>
 
 <!-- CTA FINAL + FORMULAIRE -->
-<section id="audit" style="background: #0F172A">
+<section id="audit" class="cta" style="background: #0F172A">
+<div class="cta-glow g1" aria-hidden="true"></div><div class="cta-glow g2" aria-hidden="true"></div>
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
-<div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; color: #FFFFFF">
+<div class="rv" style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 16px; color: #FFFFFF">
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(36px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -1px">Où en est votre garage sur Google ?</h2>
 <p style="margin: 0; font-size: 18px; color: #CBD5E1">Audit vidéo gratuit sous 48 h. Quatre champs, aucun engagement.</p>
 </div>
@@ -361,5 +372,6 @@ Agence digitale dédiée aux garages automobiles</span>
 </footer>
 
 </div>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
