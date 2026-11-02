@@ -330,8 +330,12 @@ Agence digitale dédiée aux garages automobiles</span>
 <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: clamp(36px, 4.6vw, 56px); line-height: 1.05; letter-spacing: -1px">Où en est votre garage sur Google ?</h2>
 <p style="margin: 0; font-size: 18px; color: #CBD5E1">Audit vidéo gratuit sous 48 h. Quatre champs, aucun engagement.</p>
 </div>
-<form name="audit" method="POST" action="/envoi.php" aria-label="Demande d'audit gratuit" style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.25)">
-<p hidden><label>Ne pas remplir <input name="site-web" tabindex="-1" autocomplete="off"></label></p>
+<form name="audit" method="POST" action="https://api.web3forms.com/submit" aria-label="Demande d'audit gratuit" style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.25)">
+<input type="hidden" name="access_key" value="CLE_WEB3FORMS_A_RENSEIGNER">
+<input type="hidden" name="subject" value="Nouvelle demande d'audit — ydkagency.com">
+<input type="hidden" name="from_name" value="Site YDK Agency">
+<input type="hidden" name="redirect" value="https://ydkagency.com/merci.html">
+<input type="checkbox" name="botcheck" class="hidden" style="display: none" tabindex="-1" autocomplete="off">
 <label for="v2type" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: #334155">Vous êtes<select id="v2type" name="type" style="font: inherit; font-size: 17px; color: #0F172A; background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 14px; min-height: 48px"><option>Garage indépendant</option><option>Agent ou réparateur de marque</option><option>Carrosserie</option><option>Négociant VO</option><option>Concession ou groupe</option></select></label>
 <label for="v2nom" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: #334155">Nom de l'établissement<input id="v2nom" name="etablissement" type="text" autocomplete="organization" required="" placeholder="Garage du Centre" style="font: inherit; font-size: 17px; color: #0F172A; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 14px; min-height: 48px; box-sizing: border-box"></label>
 <label for="v2ville" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500; color: #334155">Ville<input id="v2ville" name="ville" type="text" autocomplete="address-level2" required="" placeholder="Fontainebleau" style="font: inherit; font-size: 17px; color: #0F172A; border: 1px solid #CBD5E1; border-radius: 10px; padding: 12px 14px; min-height: 48px; box-sizing: border-box"></label>

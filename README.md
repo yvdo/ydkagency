@@ -15,7 +15,12 @@ Site statique en HTML/CSS, sans étape de build.
 
 ## Hébergement
 
-IONOS (Hébergement Web Expert), dossier `/clickandbuilds/ydkagency-site`. Domaine externe ydkagency.com géré chez OVH (enregistrements A vers IONOS).
-Le formulaire « audit » est traité par `envoi.php` : e-mail vers contact@ydkagency.com
-et copie de secours dans `_demandes/demandes.csv` (dossier interdit d'accès web).
-Mise à jour : déposer les fichiers dans le dossier IONOS (gestionnaire de fichiers ou SFTP).
+GitHub Pages, publié depuis la branche `main` (racine). Domaine personnalisé défini par le fichier `CNAME`.
+Domaine ydkagency.com géré chez OVH : 4 enregistrements A vers GitHub Pages
+(185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) et `www` en CNAME vers `yvdo.github.io.`.
+Les enregistrements mail (MX, SPF, DKIM, smtp) restent chez OVH.
+
+Le formulaire « audit » est envoyé à Web3Forms, qui le transfère par e-mail à contact@ydkagency.com,
+puis redirige vers `merci.html`.
+
+Chaque push sur `main` met le site à jour automatiquement.
