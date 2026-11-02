@@ -22,7 +22,7 @@
         drifts.forEach(function (el) {
           var r = el.getBoundingClientRect(), vh = window.innerHeight;
           var t = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
-          el.style.transform = 'translateX(' + (6 - 40 * t) + '%)';
+          el.style.transform = 'translateX(' + (5 - 10 * t) + '%)';
         });
         ticking = false;
       });

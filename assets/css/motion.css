@@ -65,8 +65,14 @@ html{scroll-behavior:smooth}
 .marquee-track span::after{content:"";width:8px;height:8px;border-radius:50%;background:#7DD3FC;margin-left:9px}
 
 /* Texte géant qui glisse */
-.drift-wrap{overflow:hidden;padding:24px 0 0;pointer-events:none}
-.drift{font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(64px,11vw,160px);line-height:1;letter-spacing:-3px;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px #CBD5E1}
+.drift-wrap{overflow:hidden;padding:56px 24px 0;pointer-events:none;text-align:center}
+.drift{display:inline-block;font-family:'Outfit',sans-serif;font-weight:700;font-size:clamp(44px,5.6vw,92px);line-height:1;letter-spacing:-2px;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px #CBD5E1}
+.drift .acc{-webkit-text-stroke-color:#7DB9DC}
+@media (max-width:700px){
+  .drift-wrap{padding:48px 24px 0;text-align:left}
+  .drift{white-space:normal;font-size:clamp(40px,13vw,64px);letter-spacing:-1px;line-height:1.05;animation:none !important;transform:none !important}
+  .drift span{display:block}
+}
 
 /* Boutons et FAQ */
 .v2-btn svg{transition:transform .25s}
@@ -92,7 +98,7 @@ details[open] summary::after{transform:rotate(45deg)}
 @keyframes parUp{to{transform:translateY(-110px)}}
 @keyframes parDown{to{transform:translateY(80px);opacity:.25}}
 @keyframes parSlow{to{transform:translateY(160px)}}
-@keyframes drift{from{transform:translateX(6%)}to{transform:translateX(-34%)}}
+@keyframes drift{from{transform:translateX(5%)}to{transform:translateX(-5%)}}
 @keyframes zoom{from{transform:scale(1.18)}to{transform:scale(1)}}
 @keyframes glow{to{transform:translate(120px,80px)}}
 
