@@ -15,6 +15,7 @@ Site statique en HTML/CSS, sans étape de build.
 
 ## Hébergement
 
-Netlify, dossier de publication : racine du dépôt, aucune commande de build.
-Le formulaire « audit » utilise Netlify Forms (`data-netlify="true"`).
-Domaine ydkagency.com géré chez OVH (enregistrements A et CNAME www vers Netlify).
+IONOS (Hébergement Web Expert), dossier `/clickandbuilds/ydkagency-site`. Domaine externe ydkagency.com géré chez OVH (enregistrements A vers IONOS).
+Le formulaire « audit » est traité par `envoi.php` : e-mail vers contact@ydkagency.com
+et copie de secours dans `_demandes/demandes.csv` (dossier interdit d'accès web).
+Mise à jour : déposer les fichiers dans le dossier IONOS (gestionnaire de fichiers ou SFTP).
